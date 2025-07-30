@@ -1,0 +1,556 @@
+.homepage-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .homepage-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .welcome-section h1 {
+    margin: 0 0 8px 0;
+    font-size: 28px;
+    color: #2c3e50;
+    font-weight: 600;
+  }
+  
+  .welcome-section p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 16px;
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .refresh-button, .logout-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .refresh-button {
+    background: #17a2b8;
+    color: white;
+  }
+  
+  .refresh-button:hover {
+    background: #138496;
+    transform: translateY(-1px);
+  }
+  
+  .logout-button {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .logout-button:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+  }
+  
+  .error-banner {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 12px 24px;
+    margin: 0;
+  }
+  
+  .error-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .error-icon {
+    font-size: 18px;
+  }
+  
+  .error-message {
+    flex: 1;
+  }
+  
+  .error-close {
+    background: none;
+    border: none;
+    color: #721c24;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+  }
+  
+  .homepage-main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 32px;
+    width: 100%;
+  }
+  
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  
+  .homepage-sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar-content {
+    position: sticky;
+    top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .quick-stats-card, .tips-card, .user-info-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quick-stats-card h3, .tips-card h3, .user-info-card h3 {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    color: #2c3e50;
+  }
+  
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .stat-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  .stat-value {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .stat-value.completed {
+    color: #28a745;
+  }
+  
+  .stat-value.pending {
+    color: #ffc107;
+  }
+  
+  .tips-card ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  .tips-card li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #495057;
+  }
+  
+  .user-details p {
+    margin: 8px 0;
+    color: #495057;
+  }
+  
+  .homepage-footer {
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+  }
+  
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    color: white;
+  }
+  
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .homepage-main {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    
+    .sidebar-content {
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+    
+    .header-actions {
+      justify-content: center;
+    }
+    
+    .homepage-main {
+      padding: 20px 16px;
+    }
+    
+    .sidebar-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .welcome-section h1 {
+      font-size: 24px;
+    }
+    
+    .refresh-button, .logout-button {
+      padding: 8px 16px;
+      font-size: 13px;
+    }
+    
+    .quick-stats-card, .tips-card, .user-info-card {
+      padding: 16px;
+    }
+  }
+  .homepage-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .homepage-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .welcome-section h1 {
+    margin: 0 0 8px 0;
+    font-size: 28px;
+    color: #2c3e50;
+    font-weight: 600;
+  }
+  
+  .welcome-section p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 16px;
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .refresh-button, .logout-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .refresh-button {
+    background: #17a2b8;
+    color: white;
+  }
+  
+  .refresh-button:hover {
+    background: #138496;
+    transform: translateY(-1px);
+  }
+  
+  .logout-button {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .logout-button:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+  }
+  
+  .error-banner {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 12px 24px;
+    margin: 0;
+  }
+  
+  .error-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .error-icon {
+    font-size: 18px;
+  }
+  
+  .error-message {
+    flex: 1;
+  }
+  
+  .error-close {
+    background: none;
+    border: none;
+    color: #721c24;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+  }
+  
+  .homepage-main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 32px;
+    width: 100%;
+  }
+  
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  /* Removed the empty ruleset that was causing the error */
+  
+  .homepage-sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar-content {
+    position: sticky;
+    top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .quick-stats-card, .tips-card, .user-info-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quick-stats-card h3, .tips-card h3, .user-info-card h3 {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    color: #2c3e50;
+  }
+  
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .stat-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  .stat-value {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .stat-value.completed {
+    color: #28a745;
+  }
+  
+  .stat-value.pending {
+    color: #ffc107;
+  }
+  
+  .tips-card ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  .tips-card li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #495057;
+  }
+  
+  .user-details p {
+    margin: 8px 0;
+    color: #495057;
+  }
+  
+  .homepage-footer {
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+  }
+  
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    color: white;
+  }
+  
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .homepage-main {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    
+    .sidebar-content {
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+    
+    .header-actions {
+      justify-content: center;
+    }
+    
+    .homepage-main {
+      padding: 20px 16px;
+    }
+    
+    .sidebar-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .welcome-section h1 {
+      font-size: 24px;
+    }
+    
+    .refresh-button, .logout-button {
+      padding: 8px 16px;
+      font-size: 13px;
+    }
+    
+    .quick-stats-card, .tips-card, .user-info-card {
+      padding: 16px;
+    }
+  }
+  
