@@ -10,11 +10,10 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // ✅ TODO: Add backend login logic here
     console.log("Email:", email);
     console.log("Password:", password);
 
-    // For now, simulate login and redirect to Home page
+  
     navigate("/home");
   };
 
